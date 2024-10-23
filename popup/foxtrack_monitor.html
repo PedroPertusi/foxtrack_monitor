@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FireGuard</title>
+  <link rel="stylesheet" href="foxtrack_monitor.css">
+</head>
+<body>
+  <h1>Relatório de Privacidade do FireGuard</h1>
+  
+  <button id="runScan">Executar Verificação</button>
+
+  <button id="about">Sobre</button>
+
+  <div id="loading" style="display:none;">
+    <p id="scanningText">Verificando...</p> 
+    <img src="../assets/loading.gif" alt="Carregando" />
+  </div>  
+
+  <div id="result" style="display:none;">
+    <div class="status">
+      <p><strong>Domínios de Terceiros:</strong> <span id="thirdPartyStatus">Carregando...</span></p>
+      <p><strong>Ameaças de Sequestro/Hooking:</strong> <span id="hijackingStatus">Carregando...</span></p>
+      <p><strong>Armazenamento Local Detectado:</strong> <span id="storageStatus">Carregando...</span></p>
+      <p><strong>Canvas Fingerprinting:</strong> <span id="fingerprintStatus">Carregando...</span></p>
+      <p><strong>Cookies:</strong> <span id="cookieStatus">Carregando...</span></p> 
+      <p><strong>Quantidade de Cookies:</strong> <span id="cookieAmount">Carregando...</span></p>
+    </div>
+
+    <p class="score">Pontuação de Privacidade: <span id="privacyScore">Calculando...</span></p>
+  </div>
+
+  <div id="aboutSection" style="display:none; margin-top: 20px;">
+    <h2>Sobre a Pontuação de Privacidade</h2>
+    <p>A pontuação de privacidade começa em 100 pontos, que representa o nível máximo de proteção de privacidade para uma página da web. Várias verificações são realizadas para detectar riscos potenciais de privacidade, e os pontos são deduzidos com base na gravidade de cada risco.</p>
+    <p><strong>Por que os pontos são removidos:</strong></p>
+    <ul>
+      <li><strong>Domínios de terceiros:</strong> 10 pontos são deduzidos se o site usar domínios de terceiros (por exemplo, para anúncios ou rastreamento). Esses terceiros podem coletar informações sobre o usuário.</li>
+      <li><strong>Ameaças de sequestro/hooking:</strong> 10 pontos são deduzidos se o site estiver embutido em um iframe, o que pode indicar uma ameaça potencial de sequestro ou hooking.</li>
+      <li><strong>Uso de armazenamento local:</strong> 10 pontos são deduzidos se o site armazenar dados no armazenamento local do usuário. Esses dados podem ser usados para fins de rastreamento.</li>
+      <li><strong>Canvas Fingerprinting:</strong> 5 pontos são deduzidos se o site tentar usar o canvas fingerprinting. Essa técnica permite que os sites criem um identificador exclusivo para o usuário com base em como o navegador renderiza gráficos.</li>
+      <li><strong>Cookies de terceiros:</strong> 10 pontos são deduzidos se o site configurar cookies de terceiros. Estes são frequentemente usados para rastreamento entre sites diferentes.</li>
+    </ul>
+    <p><strong>Por que nem tudo deduz pontos:</strong> Alguns riscos de privacidade são mais graves do que outros. As quantidades de dedução são determinadas pelo quão invasivo ou arriscado é cada comportamento. Riscos mais invasivos (como domínios de terceiros e sequestro) deduzem mais pontos, enquanto riscos mais sutis (como canvas fingerprinting) deduzem menos pontos.</p>
+
+    <button id="closeAbout">Fechar</button>
+  </div>
+
+  <script src="foxtrack_monitor.js"></script>
+</body>
+</html>
