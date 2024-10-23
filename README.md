@@ -1,5 +1,6 @@
 # FoxTrack Monitor
 Projeto para o roteiro 3 da disciplina de cibersegurança do 6o Semestre de Ciência da Computação.
+
 Aluno: Pedro Pertusi
 
 **FoxTrack Monitor** é uma extensão de navegador que monitora e detecta possíveis conexões de terceiros, ameaças de sequestro e hook, armazenamento local e técnicas de fingerprinting em páginas web. A extensão exibe um relatório dinâmico desses aspectos de segurança diretamente no popup da extensão.
